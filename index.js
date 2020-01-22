@@ -17,6 +17,9 @@ mongoose.connect("mongodb://localhost/user", {
 const userRoutes = require("./routes/user");
 app.use(userRoutes);
 
+const offerRoutes = require("./routes/offer");
+app.use(offerRoutes);
+
 app.all("*", function(req, res) {
   res.json({ message: " all routes" });
 });

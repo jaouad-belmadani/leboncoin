@@ -10,7 +10,7 @@ const isAuthenticated = async (req, res, next) => {
     if (!user) {
       return res.status(401).json({ error: "not good token" });
     } else {
-      // req.user =user crée une clé "user"dans req. La route pourra avoir accès à
+      // req.user = user crée une clé "user"dans req. La route pourra avoir accès à
       req.user = user;
       return next();
     }

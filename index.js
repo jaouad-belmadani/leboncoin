@@ -5,6 +5,8 @@ const formidableMiddleware = require("express-formidable");
 app.use(formidableMiddleware());
 const router = express.Router();
 const mongoose = require("mongoose");
+const cors = require("cors");
+app.use(cors());
 
 // Je relie mongoose à ma base de donnée
 
@@ -23,6 +25,6 @@ app.use(offerRoutes);
 app.all("*", function(req, res) {
   res.json({ message: " all routes" });
 });
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log(" Server Started");
 });

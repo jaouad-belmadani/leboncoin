@@ -1778,6 +1778,6 @@ app.get("/", (req, res) => {
 app.all("*", function(req, res) {
   res.json({ message: " all routes" });
 });
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log(" Server Started");
 });
